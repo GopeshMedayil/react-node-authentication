@@ -1,8 +1,14 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { useEffect, useRef } from 'react';
 import * as Yup from 'yup';
 
 
 const Login = () => {
+    const inputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        return inputRef.current?.focus();
+    }, []);
 
     return (
         <div>
@@ -23,7 +29,7 @@ const Login = () => {
             >
                 <Form>
                     <label htmlFor="email">Email Address</label>
-                    <Field name="email" type="email" />
+                    <Field name="email" type="email" innerRef={inputRef} />
                     <ErrorMessage name="email" />
 
                     <label htmlFor="password">Password</label>
