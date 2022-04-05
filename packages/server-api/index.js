@@ -8,7 +8,7 @@ const path = require('path');
 const usersDB = {
     users: require('./users.json'),
     setUsers: function (data) { this.users = data }
-} -
+}
 const app = express();
 
 app.post("/auth", (req, res) => {
@@ -35,7 +35,7 @@ app.post("/auth", (req, res) => {
         const currentUser = { ...foundUser, refreshToken };
         usersDB.setUsers([...otherUsers, currentUser]);
         await fsPromises.writeFile(
-            path.join(__dirname, '..', 'model', 'users.json'),
+            path.join(__dirname, '.', 'users.json'),
             JSON.stringify(usersDB.users)
         );
         res.cookie('jwt', refreshToken, { httpOnly: true, sameSite: 'None', secure: true, maxAge: 24 * 60 * 60 * 1000 });
