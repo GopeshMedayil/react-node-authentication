@@ -1,5 +1,5 @@
 const express = require("express");
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3001;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -10,14 +10,18 @@ const usersDB = {
     setUsers: function (data) { this.users = data }
 }
 const app = express();
+app.use(express.json());
 
-app.post("/auth", (req, res) => {
+app.post("/auth", async (req, res) => {
+    console.log("ksksksk", req.body)
     const { user, pwd } = req.body;
     if (!user || !pwd) return res.status(400).json({ 'message': 'Username and password are required.' });
     const foundUser = usersDB.users.find(person => person.username === user);
+    console.log("found user", foundUser)
     if (!foundUser) return res.sendStatus(401); //Unauthorized 
     // evaluate password 
     const match = await bcrypt.compare(pwd, foundUser.password);
+    console.log("match", match)
     if (match) {
         // create JWTs
         const accessToken = jwt.sign(

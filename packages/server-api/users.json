@@ -1,12 +1,1 @@
-[
-    {
-        "username": "medayilgopesh@gmail.com",
-        "password": "123",
-        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQyIiwiaWF0IjoxNjMzMzY5NTY0LCJleHAiOjE2MzM0NTU5NjR9.9dwX-2wb6V9CtIWrg5xnguFhRTejpB029ikgPHjxnxU"
-    },
-    {
-        "username": "walt1",
-        "password": "$2b$10$33Q9jtAoaXC4aUX9Bjihxum2BHG.ENB6JyoCvPjnuXpITtUd8x8/y",
-        "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQxIiwiaWF0IjoxNjMzMzg5NDAyLCJleHAiOjE2MzM0NzU4MDJ9.GvkCtOJsmvAKNDBCiH7jXr4FPE4wmFynuDS4QpDnCQY"
-    }
-]
+[{"username":"walt1","password":"$2b$10$33Q9jtAoaXC4aUX9Bjihxum2BHG.ENB6JyoCvPjnuXpITtUd8x8/y","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IndhbHQxIiwiaWF0IjoxNjMzMzg5NDAyLCJleHAiOjE2MzM0NzU4MDJ9.GvkCtOJsmvAKNDBCiH7jXr4FPE4wmFynuDS4QpDnCQY"},{"username":"medayilgopesh@gmail.com","password":"$2a$12$O7TCUzA.oo30N345gG38i.6uDE7ZCpcWRgCbWOyNvOuoYRPyxwM3K","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1lZGF5aWxnb3Blc2hAZ21haWwuY29tIiwiaWF0IjoxNjQ5MTg0NDY3LCJleHAiOjE2NDkyNzA4Njd9.ztCrIR9o-jKhifLyWkjwpnTCT2bZ2Nh0dL7CPgNsUuw"}]
