@@ -10,8 +10,7 @@ const Login = () => {
 
     const handleSubmit = (values: any) => {
         console.log(values);
-
-        axios.post('http://localhost:3002/auth/', values)
+        axios.post(process.env.REACT_APP_SERVER_URL + 'auth/', values)
             .then((response: any) => {
                 console.log(response);
                 // setUser(response.data);
