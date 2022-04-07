@@ -1,41 +1,44 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as Yup from 'yup';
 
 
 const Login = () => {
     const inputRef = useRef<HTMLInputElement>(null);
+    const [user, setUser] = useState<any>({});
+
+    const handleSubmit = (values: any) => {
+        console.log(values);
+    }
 
     useEffect(() => {
         return inputRef.current?.focus();
     }, []);
 
+
+
     return (
         <div>
+
             <h1>Login</h1>
             <Formik
-                initialValues={{ email: '', password: '' }}
+                initialValues={{ user: '', pwd: '' }}
                 validationSchema={
                     Yup.object({
-                        password: Yup.string().required('Required'),
-                        email: Yup.string().email('Invalid email address').required('Required'),
+                        pwd: Yup.string().required('Required'),
+                        user: Yup.string().email('Invalid email address').required('Required'),
                     })}
-                onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                        alert(JSON.stringify(values, null, 2));
-                        setSubmitting(false);
-                    }, 400);
-                }}
+                onSubmit={handleSubmit}
             >
                 <Form>
-                    <label htmlFor="email">Email Address</label>
-                    <Field name="email" type="email" innerRef={inputRef} />
-                    <ErrorMessage name="email" />
-
+                    <label htmlFor="user">Email Address</label>
+                    <Field name="user" type="email" innerRef={inputRef} />
+                    <ErrorMessage name="user" />
+                    <br />
                     <label htmlFor="password">Password</label>
-                    <Field name="password" type="password" />
-                    <ErrorMessage name="password" />
-
+                    <Field name="pwd" type="password" />
+                    <ErrorMessage name="pwd" />
+                    <br />
                     <button type="submit">Submit</button>
                 </Form>
             </Formik>
