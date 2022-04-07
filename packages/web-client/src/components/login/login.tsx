@@ -1,6 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { useEffect, useRef, useState } from 'react';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -9,6 +10,18 @@ const Login = () => {
 
     const handleSubmit = (values: any) => {
         console.log(values);
+
+        axios.post('http://localhost:3002/auth/', values)
+            .then((response: any) => {
+                console.log(response);
+                // setUser(response.data);
+            })
+            .catch(error => {
+
+            })
+            .finally(() => {
+
+            });
     }
 
     useEffect(() => {

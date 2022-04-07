@@ -2,6 +2,7 @@ const express = require("express");
 const port = process.env.PORT || 3002;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 
 require('dotenv').config();
 const fsPromises = require('fs').promises;
@@ -14,6 +15,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors())
 
 const verifyJWT = (req, res, next) => {
     const authHeader = req.headers['authorization'];
